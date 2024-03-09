@@ -57,12 +57,28 @@
    pip install -r requirements.txt
    ```
 
-4. **Set OpenAI API Key:** Configure your OpenAI API key in [config.json](config.json) and select the model you wish to use.
+4. **Set OpenAI API Key:** Configure your OpenAI API key in [.env](.env) and select the model you wish to use.
 
 5. **Execute Your Task:** Run the following command to start FRIDAY. Replace `[query]` with your task as needed. By default, the task is *"Move the text files containing the word 'agent' from the folder named 'document' to the path 'working_dir/agent'"*.  If the task requires using related files, you can use `--query_file_path [file_path]`.
    ```
    python run.py --query [query]
    ```
+
+\* FRIDAY currently only supports single-round conversation.
+
+## 🛠️ FRIDAY-Gizmos
+We maintain an open-source library of toolkits for FRIDAY, which includes tools that can be directly utilized within FRIDAY.
+For a detailed list of tools, please see [FRIDAY-Gizmos](https://github.com/OS-Copilot/FRIDAY-Gizmos). The usage methods are as follows:
+
+1. Find the tool you want to use in [FRIDAY-Gizmos](https://github.com/OS-Copilot/FRIDAY-Gizmos) and download its tool code.
+2. Add the tool to FRIDAY's toolkit:
+```shell
+python friday/core/action_manager.py --add --tool_name [tool_name] --tool_path [tool_path]
+```
+3. If you wish to remove a tool, you can run:
+```shell
+python friday/core/action_manager.py --delete --tool_name [tool_name]
+```
 
 ## 💻 User Interface (UI)
 
@@ -263,6 +279,11 @@ Made with [contrib.rocks](https://contrib.rocks). -->
 ## 🛡 Disclaimer
 
 OS-Copilot is provided "as is" without warranty of any kind. Users assume full responsibility for any risks associated with its use, including **potential data loss** or **changes to system settings**. The developers of OS-Copilot are not liable for any damages or losses resulting from its use. Users must ensure their actions comply with applicable laws and regulations.
+
+
+## 🏫 Community
+
+Join our community to connect with other agent enthusiasts, share your tools and demos, and collaborate on exciting initiatives. You can find us on [Slack](https://join.slack.com/t/slack-ped8294/shared_invite/zt-2cqebow90-soac9UFKGZ2RcUy8PqjZrA).
 
 
 ## 🔎 Citation

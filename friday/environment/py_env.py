@@ -36,8 +36,7 @@ class PythonEnv(Env):
                 encoding="utf8",
                 check=True, cwd=self.working_dir, timeout=self.timeout,
                 stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                env={ "PYTHONPATH": os.getcwd() }
+                stderr=subprocess.PIPE
             )
             # If there is standard output.
             if results.stdout:
